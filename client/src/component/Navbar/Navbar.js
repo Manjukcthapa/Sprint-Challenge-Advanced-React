@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import {useDarkMode} from "./useDarkMode"
+import {useDarkMode} from "./useDarkMode";
+import "./styles.scss";
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useDarkMode(false);
