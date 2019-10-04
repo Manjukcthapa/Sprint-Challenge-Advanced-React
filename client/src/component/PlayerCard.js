@@ -5,7 +5,6 @@ export default function PlayerCard(props) {
     <div>
       <p>{props.member.name}</p>
       <p>{props.member.country}</p>
-      <p>{props.member.searches}</p>
     </div>
   );
 }

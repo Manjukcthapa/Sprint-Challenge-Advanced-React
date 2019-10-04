@@ -5,7 +5,6 @@ import Navbar from "./Navbar/Navbar.js";
 test(" text is found", () => {
     const { getByText} = render(<Navbar />);
    getByText(/Women's World Cup/i)
-  
   });
 
 
