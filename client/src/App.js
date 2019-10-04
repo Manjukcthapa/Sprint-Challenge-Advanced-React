@@ -1,23 +1,33 @@
-import React from 'react';
+import React from "react";
 import axios from "axios";
-import './App.css';
+import "./App.css";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      players:[]
-    }
+      players: []
+    };
   }
 
-  
+  componentDidMount(){
+    axios.get(`http://localhost:5000/api/players`)
+    .then(res => {
+      console.log("res data", res.data)
+      const players = res.data
+      this.setState({players:players})
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
         <h1>hello</h1>
       </div>
-    )
+    );
   }
 }
 
