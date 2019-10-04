@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import PlayerList from "./component/PlayerList";
 import "./App.css";
 
 class App extends React.Component {
@@ -10,22 +11,24 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount(){
-    axios.get(`http://localhost:5000/api/players`)
-    .then(res => {
-      console.log("res data", res.data)
-      const players = res.data
-      this.setState({players:players})
-    })
-    .catch(err => {
-      console.log(err);
-    })
+  componentDidMount() {
+    axios
+      .get(`http://localhost:5000/api/players`)
+      .then(res => {
+        console.log("res data", res.data);
+        const players = res.data;
+        this.setState({ players: players });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   render() {
     return (
       <div>
         <h1>hello</h1>
+        <PlayerList players={this.state.players}/>
       </div>
     );
   }
