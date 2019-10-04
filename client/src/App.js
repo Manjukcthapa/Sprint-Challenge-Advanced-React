@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import PlayerList from "./component/PlayerList";
-import Navbar from "./component/Navbar/Navbar"
+import Navbar from "./component/Navbar/Navbar";
 import "./App.css";
 
 class App extends React.Component {
@@ -16,7 +16,6 @@ class App extends React.Component {
     axios
       .get(`http://localhost:5000/api/players`)
       .then(res => {
-        console.log("res data", res.data);
         const players = res.data;
         this.setState({ players: players });
       })
@@ -28,8 +27,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-       <Navbar/>
-        <PlayerList players={this.state.players}/>
+        <Navbar />
+        <PlayerList players={this.state.players} />
       </div>
     );
   }

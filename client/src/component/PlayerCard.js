@@ -1,10 +1,11 @@
 import React from "react";
-import { tsPropertySignature } from "@babel/types";
 
 export default function PlayerCard(props) {
   return (
     <div>
       <p>{props.member.name}</p>
+      <p>{props.member.country}</p>
+      <p>{props.member.searches}</p>
     </div>
   );
 }
